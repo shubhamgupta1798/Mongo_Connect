@@ -1,0 +1,40 @@
+﻿@page
+@model connect_mongo.Pages.Shared.Conn.connectionModel
+@{
+}
+<h2>Students</h2>
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+            <span class="input-group-btn">
+                <button class="btn btn-default">
+                    <span class="glyphicon glyphicon-envelope">Search</span>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <td>Name</td>
+        <td>Roll Number</td>
+    </tr>
+    @foreach(var student in Model.Students)
+    {
+        <tr>
+            <td>
+                @student.name
+            </td>
+            <td>
+                @student.roll_number
+            </td>
+            <td>
+                <form method="post">
+                    <input type="hidden" asp-for="NAME" value="@student.name"/>
+                    <button class="btn btn-default"  type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>

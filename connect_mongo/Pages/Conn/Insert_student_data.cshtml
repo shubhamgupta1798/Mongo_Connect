@@ -1,0 +1,25 @@
+﻿@page
+@model connect_mongo.Insert_student_dataModel
+@{
+}
+
+<form method="Post" action="">
+    <div class="form-group">
+        <div class="input-group">
+            
+            <input class="form-control" asp-for="Name" placeholder="Name"/>
+        </div>
+        <div class="input-group">
+            
+            <input class="form-control" asp-for="Roll_number" placeholder="Roll Number" />
+        </div>
+        
+            
+                <button type="submit" class="btn btn-primary">
+                   Insert
+                </button>
+           
+
+        
+    </div>
+</form>
