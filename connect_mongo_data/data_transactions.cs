@@ -17,7 +17,7 @@ namespace connect_mongo_data
         }
         public Boolean AddStudentdata(Student student)
         {
-            var connectionString = "mongodb://localhost:27017";
+            var connectionString = new Conn_String().mongo_conn;
             MongoClient client = new MongoClient(connectionString);
             IMongoDatabase database = client.GetDatabase("test");
             var student_coll = database.GetCollection<BsonDocument>("student");
@@ -27,7 +27,7 @@ namespace connect_mongo_data
         public Boolean DeleteStudentdata(String _id)
         {
           var deleteFilter = Builders<BsonDocument>.Filter.Eq("name", _id);
-            var connectionString = "mongodb://localhost:27017";
+            var connectionString = new Conn_String().mongo_conn;
             MongoClient client = new MongoClient(connectionString);
             IMongoDatabase database = client.GetDatabase("test");
             var student_coll = database.GetCollection<BsonDocument>("student");

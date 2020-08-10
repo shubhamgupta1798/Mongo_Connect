@@ -15,7 +15,7 @@ namespace connect_mongo_data
         List<Student> students;
         public GetData1()
         {
-            var connectionString = "mongodb://localhost:27017";
+            var connectionString = new Conn_String().mongo_conn;
             MongoClient client = new MongoClient(connectionString);
             IMongoDatabase database = client.GetDatabase("test");
             var student = database.GetCollection<BsonDocument>("student");

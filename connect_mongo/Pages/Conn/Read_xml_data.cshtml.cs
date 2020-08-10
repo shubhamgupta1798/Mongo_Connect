@@ -20,7 +20,7 @@ namespace connect_mongo.Pages.Conn
 
             var json = Newtonsoft.Json.JsonConvert.SerializeXmlNode(doc1);
             Console.WriteLine(json);
-           
+            Data = json.ToString();
 
         }
     }
